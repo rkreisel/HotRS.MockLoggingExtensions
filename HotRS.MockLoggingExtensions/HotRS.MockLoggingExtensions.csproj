@@ -9,7 +9,7 @@
 		<Copyright>House on the Rock Software 2022</Copyright>
 		<Authors>Randy Kreisel</Authors>
 		<PackageProjectUrl>https://github.com/rkreisel/HotRS.MockLoggingExtensions</PackageProjectUrl>
-		<Version>1.0.0.1</Version>
+		<Version>1.0.0.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
