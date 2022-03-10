@@ -54,7 +54,7 @@ steps:
 
   inputs:
     command: test
-    projects: '**/HotRS.MockLoggingExtensions.UnitTests.csproj'
+    projects: '**/HotRS.MockLoggingExtensions/UnitTests.csproj'
     arguments: '--configuration $(BuildConfiguration) --collect "XPlat Code coverage" -- RunConfiguration.DisableAppDomain=true'
     testRunTitle: 'HotRS.MockLoggingExtensions.UnitTests'
 
