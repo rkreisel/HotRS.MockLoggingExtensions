@@ -7,3 +7,11 @@ Example:
 mockLogger.VerifyLogContent("expectedstring", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith);
 ```
 
+Note: You must change the creation of the logger to:
+
+```c#
+Create<ILogger<classname>>(MockBehavior.Loose)
+```
+
+Follow/Contribute to the project:
+https://github.com/rkreisel/HotRS.MockLoggingExtensions
