@@ -28,6 +28,7 @@ public static class MockLoggingExtensions
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
     /// <summary>
     /// An extension method for a generic MOQ Logger to verify if a given string was logged.
+    /// Note: You must change the creation of the logger to Create<ILogger<LoggingTester>>(MockBehavior.Loose)
     /// Example:
     /// mockLogger.VerifyLogContent($"Order number { request.OrderNumber}: Invalid request recieved with errors", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith);
     /// </summary>
@@ -36,7 +37,8 @@ public static class MockLoggingExtensions
     /// <param name="value">The string to verify</param>
     /// <param name="times">The number of times it should be found</param>
     /// <param name="compType">The comparison type ([Equals], Contains, StartsWith, or EndsWith)</param>
-    public static void VerifyLogContent<T>(this Mock<ILogger<T>> mockLogger, string value, Func<Times> times, ComparisonType compType = ComparisonType.Equals)
+    /// <param name="strComp">The string comparison modifier. Defualts to StringComparison.Ordinal (which is the .net default)</param>
+    public static void VerifyLogContent<T>(this Mock<ILogger<T>> mockLogger, string value, Func<Times> times, ComparisonType compType = ComparisonType.Equals, StringComparison strComp = StringComparison.Ordinal)
     {
         ArgumentNullException.ThrowIfNull(value);
         ArgumentNullException.ThrowIfNull(compType);
@@ -46,7 +48,7 @@ public static class MockLoggingExtensions
                 mockLogger.Verify(x => x.Log(
                     It.IsAny<LogLevel>(),
                     It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((v, _) => v.ToString().Equals(value)),
+                    It.Is<It.IsAnyType>((v, _) => v.ToString().Equals(value, strComp)),
                     It.IsAny<Exception>(),
                     It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
                     times);
@@ -55,7 +57,7 @@ public static class MockLoggingExtensions
                 mockLogger.Verify(x => x.Log(
                     It.IsAny<LogLevel>(),
                     It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((v, _) => v.ToString().Contains(value)),
+                    It.Is<It.IsAnyType>((v, _) => v.ToString().Contains(value, strComp)),
                     It.IsAny<Exception>(),
                     It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
                     times);
@@ -64,7 +66,7 @@ public static class MockLoggingExtensions
                 mockLogger.Verify(x => x.Log(
                     It.IsAny<LogLevel>(),
                     It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((v, _) => v.ToString().StartsWith(value)),
+                    It.Is<It.IsAnyType>((v, _) => v.ToString().StartsWith(value, strComp)),
                     It.IsAny<Exception>(),
                     It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
                     times);
@@ -73,7 +75,7 @@ public static class MockLoggingExtensions
                 mockLogger.Verify(x => x.Log(
                     It.IsAny<LogLevel>(),
                     It.IsAny<EventId>(),
-                    It.Is<It.IsAnyType>((v, _) => v.ToString().EndsWith(value)),
+                    It.Is<It.IsAnyType>((v, _) => v.ToString().EndsWith(value, strComp)),
                     It.IsAny<Exception>(),
                     It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
                     times);
