@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Diagnostics.CodeAnalysis;
 using TestApp;
 
 using var loggerFactory = LoggerFactory.Create(builder =>
@@ -22,3 +23,13 @@ ILoggingTester loggingTester = app.Services.GetRequiredService<LoggingTester>();
 loggingTester.LogError("Info");
 Console.WriteLine("Press any key to exit");
 Console.ReadKey();
+
+#region Dummy class to allow us to exclude program.cs from code coverage
+#pragma warning disable CA1050 // Declare types in namespaces
+[ExcludeFromCodeCoverage]
+public partial class Program
+{
+
+}
+#pragma warning restore CA1050 // Declare types in namespaces
+#endregion
