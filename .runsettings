@@ -31,7 +31,7 @@
 						<!-- Exclude file names -->
 						<Sources>
 							<Exclude>
-								<Source>.*\\Program.cs*</Source>
+								<Source>.*\\TestApp\\Program.cs</Source>
 							</Exclude>
 						</Sources>
 						<!-- We recommend you do not change the following values: -->
