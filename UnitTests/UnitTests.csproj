@@ -22,20 +22,4 @@
 		<ProjectReference Include="..\HotRS.MockLoggingExtensions\HotRS.MockLoggingExtensions.csproj" />
 		<ProjectReference Include="..\TestApp\TestApp.csproj" />
 	</ItemGroup>
-	
-
-	<PropertyGroup Label="FineCodeCoverage">
-		<Enabled>
-			True
-		</Enabled>
-		<Include>
-			[*]*
-		</Include>
-		<ExcludeByFile>
-			**/Program.cs
-		</ExcludeByFile>
-		<IncludeTestAssembly>
-			True
-		</IncludeTestAssembly>
-	</PropertyGroup>
 </Project>
