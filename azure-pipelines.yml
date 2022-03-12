@@ -81,6 +81,7 @@ steps:
     packagesToPush: '$(Build.Repository.LocalPath)/**/*.nupkg;!$(Build.Repository.LocalPath)/**/*.symbols.nupkg'
 
     publishVstsFeed: '8bb5db4f-2126-462b-b5f3-54fb4bfef7ad/6d4dc832-ff4d-4065-a71d-9e7bfab953b5'
+  enabled: false
 
 
 
@@ -99,3 +100,5 @@ steps:
     nuGetFeedType: external
 
     publishFeedCredentials: 'MockLoggerExtensions-NUget'
+  enabled: false
+
