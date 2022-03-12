@@ -17,8 +17,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="coverlet.collector" Version="3.1.2">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
 
@@ -26,7 +26,9 @@
 		<ProjectReference Include="..\HotRS.MockLoggingExtensions\HotRS.MockLoggingExtensions.csproj" />
 		<ProjectReference Include="..\TestApp\TestApp.csproj" />
 	</ItemGroup>
-	<PropertyGroup Label="FineCodeCoverage">
+	
+
+	<!--<PropertyGroup Label="FineCodeCoverage">
 		<Enabled>
 			True
 		</Enabled>
@@ -39,5 +41,5 @@
 		<IncludeTestAssembly>
 			True
 		</IncludeTestAssembly>
-	</PropertyGroup>
+	</PropertyGroup>-->
 </Project>
