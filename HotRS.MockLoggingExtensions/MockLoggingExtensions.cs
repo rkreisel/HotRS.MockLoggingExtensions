@@ -25,7 +25,7 @@ public static class MockLoggingExtensions
             It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)), times);
     }
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+//#pragma warning disable CS8602 // Dereference of a possibly null reference.
     /// <summary>
     /// An extension method for a generic MOQ Logger to verify if a given string was logged.
     /// Note: You must change the creation of the logger to Create<ILogger<LoggingTester>>(MockBehavior.Loose)
