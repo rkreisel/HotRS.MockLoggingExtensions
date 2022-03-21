@@ -31,6 +31,7 @@ public static class MockLoggingExtensions
     /// Note: You must change the creation of the logger to Create<ILogger<LoggingTester>>(MockBehavior.Loose)
     /// Example:
     /// mockLogger.VerifyLogContent($"Order number { request.OrderNumber}: Invalid request recieved with errors", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith);
+    /// mockLogger.VerifyLogContent($"Order number { request.OrderNumber}: Invalid request recieved with errors", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith, StringComparison.OrdinalIgnoreCase);
     /// </summary>
     /// <typeparam name="T">A generic logger type</typeparam>
     /// <param name="mockLogger">A logger instance</param>

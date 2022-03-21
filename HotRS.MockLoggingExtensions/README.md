@@ -5,6 +5,8 @@ Example:
 
 ```c#
 mockLogger.VerifyLogContent("expectedstring", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith);
+mockLogger.VerifyLogContent($"Order number { request.OrderNumber}: Invalid request recieved with errors", Times.Once, MockLoggerExtensions.ComparisonType.StartsWith, StringComparison.OrdinalIgnoreCase);
+
 ```
 
 Note: You must change the creation of the logger to:
