@@ -1,5 +1,5 @@
 # HotRS.MockLoggingExtensions
-This nuget provides an extension to a MOQ Logger<T> object, which simplifies the context to verify the existence that a specified string was logged.
+This nuget provides an extension to a MOQ Logger<T> object, which simplifies the verification that a specified string was logged.
 
 Example:
 
