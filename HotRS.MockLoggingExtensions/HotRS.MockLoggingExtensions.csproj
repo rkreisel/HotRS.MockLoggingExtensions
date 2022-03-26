@@ -7,18 +7,23 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>Simplifies unit tests to verify specific error message content.
 
-20220309 -1.0.1 - Added optional StringComparison to methods
-20220309 -1.0.2 - Added ReadMe only (no code change)
-20220312 - 1.0.2.2 - version # change for testing code coverage changes
-20220312 - 1.0.3 - Fixing version # problems</Description>
+</Description>
 		<Copyright>House on the Rock Software 2022</Copyright>
 		<Authors>Randy Kreisel</Authors>
 		<PackageProjectUrl>https://github.com/rkreisel/HotRS.MockLoggingExtensions</PackageProjectUrl>
-		<Version>1.0.3.1</Version>
+		<Version>1.0.3.2</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>moq;unit test;logging</PackageTags>
+		<PackageReleaseNotes>20220309 -1.0.1 - Added optional StringComparison to methods</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <None Include="..\.editorconfig" Link=".editorconfig" />
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
